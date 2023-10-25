@@ -5,9 +5,10 @@ body {
 /*Styling the list of items in the nav bar*/
 nav ul {
     display: flex;
-    flex-wrap:wrap
+    flex-wrap:wrap;
     margin:0;
     padding:0;
+    z-index:10;
 }
 /* Styling the space of each item */
 nav li {
@@ -19,6 +20,7 @@ nav li {
     min-width:200px;
     text-align: center;
     display: flex;
+    position:relative;
 }
 nav a, nav a:visited {
     text-decoration:none;
@@ -33,4 +35,20 @@ nav a:hover {
 nav a:hover, nav a.active {
     color: lightseagreen;
     background-color: rgb(173, 230, 180);
+}
+.dropdown-content {
+    position:absolute;
+    top:37px;
+    width:100%;
+    display:none;
+    z-index:20;
+}
+nav li:hover .dropdown-content {
+    display:block;
+}
+.dropdown-content a {
+    font-weight:bold;
+}
+.dropdown-content ul {
+    flex-direction:column;
 }
